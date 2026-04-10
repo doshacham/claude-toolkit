@@ -1,0 +1,80 @@
+<!-- Copyright (c) 2026 Dor Shacham <dorishacham52@gmail.com>. All rights reserved.
+     SPDX-License-Identifier: Proprietary -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Agent Dump Template for Synthesizer Skill
+  Each deep-dive agent produces one XML file following this structure.
+
+  IMPORTANT: Agents should fill ALL sections. Empty sections indicate
+  incomplete analysis and will reduce the quality score.
+-->
+<codebase-analysis area="[BRANCH NAME]" agent="[N of M]">
+
+  <overview>
+    <!-- 2-3 paragraph summary of this branch of the codebase -->
+  </overview>
+
+  <!-- Repeat this block for each file read -->
+  <file path="[relative/path/to/file.ext]">
+    <think>
+      <!-- WHY am I reading this file? What do I expect to find? -->
+    </think>
+
+    <types>
+      <type name="[Name]" kind="struct|interface|enum|alias">
+        <fields>
+          <field name="[name]" type="[type]" description="[purpose]"/>
+        </fields>
+        <methods>
+          <method name="[Name]" signature="[full signature]">
+            [What this method does]
+          </method>
+        </methods>
+      </type>
+    </types>
+
+    <functions>
+      <function name="[Name]" signature="[full signature]">
+        [What this function does, key logic]
+      </function>
+    </functions>
+
+    <constants>
+      <constant name="[NAME]" value="[value]" description="[purpose]"/>
+    </constants>
+
+    <sql-queries>
+      <query name="[descriptive name]" context="[which function uses this]">
+        [Actual SQL verbatim]
+      </query>
+    </sql-queries>
+
+    <information>
+      <!-- Post-read reflection: what was learned, what was surprising,
+           what new questions emerged, what to read next -->
+    </information>
+  </file>
+
+  <data-flows>
+    <flow name="[Operation Name]">
+      <!-- Step-by-step trace of how data moves through this branch.
+           Example: CLI command -> service function -> SQL query -> result -->
+    </flow>
+  </data-flows>
+
+  <design-patterns>
+    <pattern name="[Pattern Name]">
+      <!-- Description with code examples showing the pattern in action -->
+    </pattern>
+  </design-patterns>
+
+  <borrowable-ideas project="[current project name]">
+    <idea name="[Idea Name]" applicability="high|medium|low">
+      <description>[What the idea is]</description>
+      <source>[Where in this codebase it appears]</source>
+      <application>[How it could apply to the current project]</application>
+    </idea>
+  </borrowable-ideas>
+
+</codebase-analysis>
