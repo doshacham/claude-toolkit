@@ -1,0 +1,94 @@
+RALPH LOOP - HOW TO USE
+=======================
+
+Copy this entire folder into your project root (next to your .git folder).
+Then follow these 3 phases in order.
+
+
+PHASE 1: REQUIREMENTS (run once)
+---------------------------------
+This is an interactive interview. Claude asks you questions about what
+you want to build, then writes specs and fills in your project goal.
+
+    ./loop-specs.sh
+
+When it's done you'll have:
+  - AUDIENCE_JTBD.md        (who you're building for)
+  - specs/*.md              (one file per topic/feature)
+  - PROMPT_plan.md          (goal filled in automatically)
+
+Review these. Edit if needed. They're your source of truth.
+
+
+PHASE 2: PLANNING (loop)
+--------------------------
+Claude reads your specs, compares against existing code, and writes
+a prioritized task list in IMPLEMENTATION_PLAN.md.
+
+    ./loop-plan.sh           # run until done (usually 1-2 iterations)
+    ./loop-plan.sh 3         # or cap at 3 iterations
+
+Review IMPLEMENTATION_PLAN.md when it stops. If it's wrong, delete it
+and run again. The plan is disposable.
+
+
+PHASE 3: BUILDING (loop)
+--------------------------
+Claude picks the top task from the plan, implements it, runs tests,
+commits, pushes, and stops. The loop starts a fresh iteration for
+the next task.
+
+    ./loop-build.sh          # unlimited iterations (Ctrl+C to stop)
+    ./loop-build.sh 20       # cap at 20 iterations
+
+Each iteration = one task = one commit = fresh context window.
+Watch the first few iterations to see if Ralph needs steering.
+
+
+WORK BRANCHES (optional)
+--------------------------
+Want to work on a specific feature without touching main?
+
+    git checkout -b ralph/my-feature
+    ./loop-build.sh plan-work "user authentication with OAuth"
+    ./loop-build.sh 20
+
+This creates a scoped plan on the branch, then builds from it.
+Won't run on main/master (safety check).
+
+
+STOPPING
+---------
+Ctrl+C stops the loop between iterations.
+If Claude is mid-task, Ctrl+C in the terminal kills it.
+git reset --hard reverts uncommitted changes if things go sideways.
+
+
+FILES YOU SHOULD EDIT
+----------------------
+AGENTS.md              Fill in your build/test/lint commands
+PROMPT_plan.md         Already has your goal after Phase 1
+specs/*.md             Your requirements (edit anytime)
+
+FILES RALPH MANAGES
+--------------------
+IMPLEMENTATION_PLAN.md   Task list (generated, updated, disposable)
+AGENTS.md                Ralph adds operational learnings here too
+
+FILES YOU DON'T TOUCH
+----------------------
+PROMPT_build.md          Loop instructions for build mode
+PROMPT_plan_work.md      Loop instructions for work-branch planning
+PROMPT_specs.md          Interview prompt for Phase 1
+loop-*.sh                The loop scripts
+
+
+TROUBLESHOOTING
+----------------
+"PROMPT_*.md not found"  - You're not in the project root. cd there.
+Claude won't stop        - The sentinel watcher kills it after commit+push.
+                           If stuck, Ctrl+C and check if claude.exe is
+                           still running in Task Manager.
+Bad plan                 - Delete IMPLEMENTATION_PLAN.md, run Phase 2 again.
+Bad code                 - git reset --hard, adjust specs or AGENTS.md,
+                           re-run Phase 2 then Phase 3.

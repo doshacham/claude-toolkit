@@ -1,0 +1,16 @@
+How the loop works on Windows 11 + Git Bash + Max plan:
+
+1. loop-build.sh exports CLAUDE_LOOP_MODE=1 and runs Claude in foreground
+2. A PowerShell background watcher polls for /tmp/claude-loop-done
+3. Claude does its work, commits, pushes, then stops (no more tool calls)
+4. Stop hook fires, sees CLAUDE_LOOP_MODE=1, writes /tmp/claude-loop-done
+5. Watcher finds sentinel, waits 3s, kills newest claude.exe
+6. Control returns to loop script, next iteration starts
+
+Changed from original ralph-wiggum:
+- No -p flag (uses API credits, need Max plan)
+- No piped stdin (breaks Ink TTY)
+- Sonnet -> Opus subagents
+- @FILE -> backtick refs (@ only works interactive)
+- Added sentinel + PowerShell watcher (claude doesn't auto-exit)
+- Added loop-stop instructions in prompt (step 4 + step 9999999999999999)
