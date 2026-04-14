@@ -1,0 +1,61 @@
+# Claude Toolkit
+
+> Personal Claude Code skills, commands, agents, plugins, and autonomous loops for software engineering workflows.
+
+## What This Is
+
+A collection of markdown files and Python scripts that extend Claude Code. Drop them into ~/.claude/ and Claude auto-discovers them. No build step, no registration.
+
+## Repository Structure
+
+- skills/ — 23 auto-triggered skills (markdown + optional scripts/references)
+- commands/ — 15 slash commands (markdown with YAML frontmatter)
+- agents/ — 7 specialized sub-agents (markdown with YAML frontmatter)
+- plugins/ — 4 bundled plugins (learn, paper, triagger, write-a-skill)
+- loops/ — 4 autonomous bash loop variants (Ralph methodology)
+- hooks/ — 4 policy enforcement hooks (bash scripts)
+- rules/ — 1 rule (license headers)
+- scripts/ — 1 session startup script
+- docs/ — technical documentation
+
+## Skills
+
+Skills auto-load when their description matches the user's request.
+
+Debugging: systematic-debugging (4-phase root-cause), debugging-and-error-recovery (stop-the-line triage), defense-in-depth (multi-layer validation), code-review-and-quality (multi-axis review)
+
+Architecture: improve-codebase-architecture (deep-module refactors), design-an-interface (parallel interface designs), improve-claude-md (conditional blocks), context-engineering (optimize loaded context)
+
+Planning: planning-and-task-breakdown, spec-driven-development, incremental-implementation, source-driven-development
+
+Testing: test-driven-development (full TDD), tdd (lightweight)
+
+Analysis: synthesizer (6-phase InfoSeek-inspired analysis with 10 Python scripts), read-arxiv, ingest (LLM Wiki pattern)
+
+Behavioral: karpathy-guidelines (4 Karpathy principles), grill-me (relentless plan interview), request-refactor-plan (interview to GitHub issue)
+
+Domain: obsidian (vault operations), marp-presentation (slide decks), ci-cd-and-automation
+
+## Commands
+
+/karpathy, /debug, /debug-recover, /defense-in-depth, /tdd, /spec, /plan, /incremental, /improve-architecture, /improve-claude-md, /request-refactor-plan, /synthesize, /source-check, /ci-cd, /context
+
+## Agents
+
+karpathy-engineer (disciplined implementer), architecture-improver (refactor RFCs), synthesizer (codebase analysis), claude-md-improver (CLAUDE.md optimization), refactor-planner (interview to plan), obsidian (vault expert), presenter (slide decks)
+
+## Plugins
+
+learn (concept explanations), paper (dev-blog articles), triagger (bug triage to GitHub issues), write-a-skill (skill creation wizard)
+
+## Loops
+
+how-to-ralph-wiggum (reference guide), ralph-loop (Windows/Max plan), claude-loop (extended with fix/audit), ralph-wiggum-files (API-mode templates)
+
+## Install
+
+cp -r skills/ commands/ agents/ ~/.claude/
+
+## Docs
+
+docs/skills.md, docs/agents.md, docs/commands.md, docs/plugins.md, docs/loops.md
