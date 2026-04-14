@@ -1,0 +1,141 @@
+/* Copyright (c) 2026 Dor Shacham <dorishacham52@gmail.com>. All rights reserved.
+   SPDX-License-Identifier: Proprietary */
+
+/* @theme pastel */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=JetBrains+Mono:wght@400&display=swap');
+@import 'default';
+
+section {
+  background: #fef7f7;
+  background-image:
+    radial-gradient(circle at 10% 20%, #ffe4e6 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, #e0f2fe 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, #f3e8ff 0%, transparent 50%);
+  color: #4a4458;
+  font-family: 'Nunito', 'Quicksand', 'Inter', system-ui, sans-serif;
+  font-size: 24px;
+  padding: 40px 56px;
+  line-height: 1.6;
+  overflow-y: auto;
+}
+
+h1, h2, h3, h4 {
+  color: #6b4c8a;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: 1.73em;
+  color: #c084fc;
+}
+
+h2 {
+  font-size: 1.31em;
+  color: #f472b6;
+}
+
+h3 {
+  font-size: 1.2em;
+  color: #60a5fa;
+}
+
+a {
+  color: #ec4899;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #f9a8d4;
+}
+
+strong {
+  color: #c084fc;
+  background: #fbcfe8;
+  padding: 0 0.2em;
+  border-radius: 4px;
+}
+
+em {
+  color: #60a5fa;
+}
+
+code {
+  background: #fce7f3;
+  color: #be185d;
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background: #fce7f3;
+  border: none;
+  border-radius: 12px;
+  padding: 1em;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.1);
+}
+
+pre code {
+  background: transparent;
+  color: #4a4458;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(107, 76, 138, 0.1);
+  background: #ffffff;
+  width: 100%;
+  display: table;
+}
+
+th {
+  background: #e9d5ff;
+  color: #6b4c8a;
+  padding: 0.6em 1em;
+  font-weight: 700;
+}
+
+td {
+  border-top: 1px solid #f3e8ff;
+  padding: 0.5em 1em;
+}
+
+blockquote {
+  background: #e0f2fe;
+  border: none;
+  border-left: 4px solid #60a5fa;
+  padding: 0.8em 1.2em;
+  border-radius: 0 12px 12px 0;
+  color: #1e40af;
+  margin-left: 0;
+}
+
+ul li::marker {
+  content: "◆ ";
+  color: #f472b6;
+}
+
+section.lead {
+  text-align: center;
+}
+
+section.lead h1 {
+  font-size: 2.52em;
+  background: linear-gradient(90deg, #c084fc, #f472b6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+header, footer {
+  color: #a78bfa;
+  font-size: 0.8em;
+}
+
+section::after {
+  color: #a78bfa;
+}

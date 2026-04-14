@@ -1,0 +1,152 @@
+/* Copyright (c) 2026 Dor Shacham <dorishacham52@gmail.com>. All rights reserved.
+   SPDX-License-Identifier: Proprietary */
+
+/* @theme dashboard */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap');
+@import 'default';
+
+section {
+  background: #1e293b;
+  color: #e2e8f0;
+  color-scheme: dark;
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  font-size: 24px;
+  padding: 36px 52px;
+  line-height: 1.4;
+  overflow-y: auto;
+}
+
+h1, h2, h3, h4 {
+  color: #f1f5f9;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 1.64em;
+  border-left: 6px solid #10b981;
+  padding-left: 0.5em;
+}
+
+h2 {
+  color: #10b981;
+  font-size: 1.15em;
+}
+
+h3 {
+  color: #94a3b8;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+a {
+  color: #60a5fa;
+}
+
+strong {
+  color: #fbbf24;
+  font-size: 1.1em;
+}
+
+code {
+  background: #0f172a;
+  color: #34d399;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-left: 4px solid #10b981;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  display: table;
+  background: #0f172a;
+}
+
+tr {
+  background: #0f172a;
+}
+
+tr:nth-child(2n) {
+  background: #162032;
+}
+
+th {
+  background: #334155;
+  color: #e2e8f0;
+  padding: 0.5em 1em;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+}
+
+td {
+  border-bottom: 1px solid #334155;
+  padding: 0.5em 1em;
+  color: #cbd5e1;
+}
+
+td:last-child {
+  color: #fbbf24;
+  font-weight: 700;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+blockquote {
+  border-left: 4px solid #10b981;
+  color: #94a3b8;
+  background: #0f172a;
+  padding: 0.6em 1em;
+  margin-left: 0;
+}
+
+/* Big-number lead slide for KPIs */
+section.lead {
+  text-align: center;
+  background: radial-gradient(circle at center, #334155 0%, #1e293b 70%);
+}
+
+section.lead h1 {
+  font-size: 5.04em;
+  font-weight: 900;
+  border: none;
+  padding: 0;
+  color: #10b981;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.05em;
+}
+
+section.lead h3 {
+  color: #94a3b8;
+  font-size: 1.3em;
+  margin-top: 0;
+}
+
+header {
+  color: #94a3b8;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+footer {
+  color: #94a3b8;
+  font-size: 0.75em;
+}
+
+section::after {
+  color: #94a3b8;
+}

@@ -1,0 +1,104 @@
+/* Copyright (c) 2026 Dor Shacham <dorishacham52@gmail.com>. All rights reserved.
+   SPDX-License-Identifier: Proprietary */
+
+/* @theme paper */
+
+@import 'default';
+
+section {
+  background: #f5f0e6;
+  color: #2a2520;
+  font-family: 'Georgia', 'EB Garamond', 'Times New Roman', serif;
+  font-size: 24px;
+  padding: 48px 64px;
+  line-height: 1.55;
+  overflow-y: auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Georgia', 'Playfair Display', serif;
+  color: #1a1510;
+  font-weight: 700;
+}
+
+h1 {
+  border-bottom: 1px solid #8b7355;
+  padding-bottom: 0.3em;
+  font-size: 1.58em;
+}
+
+h2 {
+  font-style: italic;
+  color: #5a4a3a;
+}
+
+a {
+  color: #6b4226;
+  text-decoration: underline;
+}
+
+strong {
+  color: #1a1510;
+  font-weight: 700;
+}
+
+em {
+  color: #5a4a3a;
+}
+
+code {
+  background: #e8dfc8;
+  color: #3d2f20;
+  padding: 0.1em 0.3em;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background: #ebe2cc;
+  border: 1px solid #c9b98f;
+  padding: 1em;
+}
+
+blockquote {
+  border-left: 3px solid #8b7355;
+  color: #5a4a3a;
+  font-style: italic;
+  margin-left: 0;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: 'Georgia', serif;
+  width: 100%;
+  display: table;
+}
+
+th {
+  border-bottom: 2px solid #8b7355;
+  color: #1a1510;
+  padding: 0.5em 0.8em;
+  font-variant: small-caps;
+}
+
+td {
+  border-bottom: 1px solid #c9b98f;
+  padding: 0.5em 0.8em;
+}
+
+section.lead {
+  text-align: center;
+  background: #f5f0e6;
+}
+
+section.lead h1 {
+  border: none;
+  font-size: 2.16em;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+header, footer {
+  color: #8b7355;
+  font-style: italic;
+}

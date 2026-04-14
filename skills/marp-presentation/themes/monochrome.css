@@ -1,0 +1,144 @@
+/* Copyright (c) 2026 Dor Shacham <dorishacham52@gmail.com>. All rights reserved.
+   SPDX-License-Identifier: Proprietary */
+
+/* @theme monochrome */
+
+@import 'default';
+
+section {
+  background: #f5f5f5;
+  color: #1a1a1a;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 24px;
+  padding: 40px 60px;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+h1, h2, h3, h4 {
+  color: #000000;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: 1.58em;
+  border-top: 4px solid #000000;
+  padding-top: 0.3em;
+}
+
+h2 {
+  font-size: 1.23em;
+  color: #333333;
+}
+
+h3 {
+  font-size: 1.15em;
+  color: #555555;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+a {
+  color: #000000;
+  border-bottom: 1px solid #000000;
+  text-decoration: none;
+}
+
+strong {
+  color: #000000;
+  font-weight: 700;
+}
+
+em {
+  color: #444444;
+}
+
+code {
+  background: #e5e5e5;
+  color: #000000;
+  padding: 0.1em 0.3em;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background: #e5e5e5;
+  border: none;
+  border-left: 4px solid #000000;
+  padding: 1em;
+}
+
+pre code {
+  background: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  display: table;
+}
+
+th {
+  background: #000000;
+  color: #ffffff;
+  padding: 0.6em 1em;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+}
+
+td {
+  border-bottom: 1px solid #cccccc;
+  padding: 0.5em 1em;
+}
+
+tr:nth-child(2n) td {
+  background: #ebebeb;
+}
+
+blockquote {
+  border-left: 4px solid #000000;
+  padding-left: 1em;
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.1em;
+  margin-left: 0;
+}
+
+ul li::marker {
+  color: #000000;
+}
+
+section.lead {
+  text-align: left;
+  background: #1a1a1a;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.lead h1 {
+  color: #ffffff;
+  border-top-color: #ffffff;
+  font-size: 2.16em;
+}
+
+section.lead h2 {
+  color: #999999;
+}
+
+header, footer {
+  color: #888888;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+section::after {
+  color: #888888;
+}

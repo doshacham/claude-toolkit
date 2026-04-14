@@ -1,0 +1,137 @@
+/* Copyright (c) 2026 Dor Shacham <dorishacham52@gmail.com>. All rights reserved.
+   SPDX-License-Identifier: Proprietary */
+
+/* @theme academic */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import 'default';
+
+section {
+  background: #fdfaf3;
+  color: #1a1510;
+  font-family: 'EB Garamond', 'Georgia', 'Times New Roman', serif;
+  padding: 48px 64px;
+  line-height: 1.6;
+  font-size: 24px;
+  overflow-y: auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  color: #1a1510;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.66em;
+  border-bottom: 2px solid #1a1510;
+  padding-bottom: 0.3em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.39em;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  color: #3d2f20;
+}
+
+h3 {
+  font-style: italic;
+  color: #5a4a3a;
+}
+
+a {
+  color: #5a3d20;
+  text-decoration: none;
+  border-bottom: 1px dotted #5a3d20;
+}
+
+strong {
+  color: #1a1510;
+}
+
+em {
+  font-style: italic;
+  color: #3d2f20;
+}
+
+code {
+  background: #f0e8d4;
+  color: #3d2f20;
+  padding: 0.1em 0.3em;
+  font-family: 'Computer Modern', 'Courier New', monospace;
+  font-size: 0.9em;
+  border-radius: 2px;
+}
+
+pre {
+  background: #f0e8d4;
+  border: 1px solid #c9b98f;
+  padding: 1em;
+  font-size: 0.85em;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0.5em auto;
+  font-size: 0.95em;
+  width: 100%;
+  display: table;
+}
+
+th {
+  border-top: 2px solid #1a1510;
+  border-bottom: 1px solid #1a1510;
+  padding: 0.5em 1em;
+  font-variant: small-caps;
+  font-weight: 600;
+}
+
+td {
+  border-bottom: 1px solid #c9b98f;
+  padding: 0.4em 1em;
+}
+
+tr:last-child td {
+  border-bottom: 2px solid #1a1510;
+}
+
+blockquote {
+  border-left: 3px solid #8b7355;
+  color: #3d2f20;
+  font-style: italic;
+  padding-left: 1em;
+  margin-left: 2em;
+}
+
+section.lead {
+  text-align: center;
+  background: #fdfaf3;
+}
+
+section.lead h1 {
+  border: none;
+  font-size: 2.02em;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  margin-top: 1em;
+}
+
+section.lead h2 {
+  font-variant: normal;
+  font-style: italic;
+  color: #5a4a3a;
+  font-size: 1.15em;
+}
+
+header, footer {
+  color: #8b7355;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+section::after {
+  color: #8b7355;
+  font-style: italic;
+}

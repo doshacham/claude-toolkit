@@ -1,0 +1,145 @@
+/* Copyright (c) 2026 Dor Shacham <dorishacham52@gmail.com>. All rights reserved.
+   SPDX-License-Identifier: Proprietary */
+
+/* @theme blueprint */
+
+@import 'default';
+
+section {
+  background: #0d2847;
+  background-image:
+    linear-gradient(rgba(100, 180, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 180, 255, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: #cfe8ff;
+  color-scheme: dark;
+  font-family: 'Courier New', 'JetBrains Mono', monospace;
+  font-size: 24px;
+  padding: 40px 56px;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+h1, h2, h3, h4 {
+  color: #ffffff;
+  font-family: 'Courier New', 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: 1.58em;
+  border: 2px solid #64b4ff;
+  padding: 0.3em 0.6em;
+  display: inline-block;
+  background: rgba(13, 40, 71, 0.8);
+}
+
+h1::before {
+  content: "[ ";
+  color: #64b4ff;
+}
+
+h1::after {
+  content: " ]";
+  color: #64b4ff;
+}
+
+h2 {
+  color: #64b4ff;
+  border-bottom: 1px dashed #64b4ff;
+  padding-bottom: 0.2em;
+}
+
+h3 {
+  color: #a0d0ff;
+}
+
+a {
+  color: #ffda5e;
+  text-decoration: none;
+  border-bottom: 1px dashed #ffda5e;
+}
+
+strong {
+  color: #ffffff;
+  background: rgba(100, 180, 255, 0.2);
+  padding: 0 0.2em;
+}
+
+code {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffda5e;
+  padding: 0.1em 0.3em;
+  border: 1px solid rgba(100, 180, 255, 0.4);
+}
+
+pre {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #64b4ff;
+  padding: 1em;
+}
+
+pre code {
+  color: #cfe8ff;
+  background: transparent;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid #64b4ff;
+  width: 100%;
+  display: table;
+}
+
+th {
+  background: rgba(100, 180, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid #64b4ff;
+  padding: 0.5em 1em;
+}
+
+td {
+  border: 1px solid rgba(100, 180, 255, 0.5);
+  padding: 0.4em 1em;
+}
+
+tr {
+  background: rgba(13, 40, 71, 0.9);
+}
+
+tr:nth-child(2n) {
+  background: rgba(20, 50, 85, 0.9);
+}
+
+blockquote {
+  border-left: 3px solid #ffda5e;
+  color: #cfe8ff;
+  padding-left: 1em;
+  font-style: italic;
+  margin-left: 0;
+}
+
+ul li::marker {
+  content: "▸ ";
+  color: #64b4ff;
+}
+
+section.lead {
+  text-align: center;
+}
+
+section.lead h1 {
+  font-size: 2.16em;
+}
+
+header, footer {
+  color: #64b4ff;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8em;
+}
+
+section::after {
+  color: #64b4ff;
+}

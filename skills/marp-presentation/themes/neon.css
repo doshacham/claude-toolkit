@@ -1,0 +1,130 @@
+/* Copyright (c) 2026 Dor Shacham <dorishacham52@gmail.com>. All rights reserved.
+   SPDX-License-Identifier: Proprietary */
+
+/* @theme neon */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400&display=swap');
+@import 'default';
+
+section {
+  background: #0a0015;
+  color: #e9d5ff;
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 22px;
+  padding: 40px 56px;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  color: #ff00ff;
+  text-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 40px #ff00ff;
+  font-size: 2.16em;
+}
+
+h2 {
+  color: #00ffff;
+  text-shadow:
+    0 0 8px #00ffff,
+    0 0 16px #00ffff;
+}
+
+h3 {
+  color: #ffff00;
+  text-shadow: 0 0 8px #ffff00;
+}
+
+a {
+  color: #00ffff;
+  text-decoration: none;
+  border-bottom: 2px solid #00ffff;
+}
+
+strong {
+  color: #ffff00;
+  text-shadow: 0 0 6px #ffff00;
+}
+
+em {
+  color: #f0abfc;
+}
+
+code {
+  background: #1a0030;
+  color: #00ffff;
+  padding: 0.1em 0.4em;
+  border: 1px solid #ff00ff;
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.4);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+pre {
+  background: #0a0015;
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+  padding: 1em;
+}
+
+pre code {
+  color: #f0abfc;
+  box-shadow: none;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  display: table;
+}
+
+th, td {
+  border: 1px solid #ff00ff;
+  padding: 0.5em 0.8em;
+}
+
+th {
+  background: #1a0030;
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff;
+}
+
+tr {
+  background: #0a0015;
+}
+
+tr:nth-child(2n) {
+  background: #120020;
+}
+
+blockquote {
+  border-left: 4px solid #ffff00;
+  color: #f0abfc;
+  font-style: italic;
+}
+
+section.lead {
+  text-align: center;
+  background: radial-gradient(circle at center, #1a0030 0%, #0a0015 70%);
+}
+
+section.lead h1 {
+  font-size: 3.6em;
+  text-shadow:
+    0 0 10px #ff00ff,
+    0 0 30px #ff00ff,
+    0 0 60px #ff00ff,
+    0 0 80px #ff00ff;
+}
+
+header, footer {
+  color: #cc33cc;
+}

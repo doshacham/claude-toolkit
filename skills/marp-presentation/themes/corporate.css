@@ -1,0 +1,126 @@
+/* Copyright (c) 2026 Dor Shacham <dorishacham52@gmail.com>. All rights reserved.
+   SPDX-License-Identifier: Proprietary */
+
+/* @theme corporate */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+@import 'default';
+
+section {
+  background: #ffffff;
+  color: #1e293b;
+  font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  font-size: 24px;
+  padding: 40px 60px;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+h1, h2, h3, h4 {
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  border-bottom: 4px solid #1e40af;
+  padding-bottom: 0.25em;
+  font-size: 1.64em;
+}
+
+h2 {
+  color: #1e40af;
+  font-size: 1.23em;
+}
+
+h3 {
+  color: #475569;
+}
+
+a {
+  color: #1e40af;
+  text-decoration: none;
+  border-bottom: 1px solid #1e40af;
+}
+
+strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+code {
+  background: #f1f5f9;
+  color: #be185d;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #1e40af;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  display: table;
+}
+
+th {
+  background: #1e40af;
+  color: #ffffff;
+  padding: 0.6em 1em;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.5em 1em;
+}
+
+tr:nth-child(2n) td {
+  background: #f8fafc;
+}
+
+blockquote {
+  border-left: 4px solid #1e40af;
+  color: #475569;
+  background: #f8fafc;
+  padding: 0.5em 1em;
+  margin-left: 0;
+}
+
+section.lead {
+  text-align: left;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+}
+
+section.lead h1 {
+  border: none;
+  font-size: 2.02em;
+  color: #0f172a;
+}
+
+section.lead h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #1e40af;
+  margin-top: 0.5em;
+}
+
+header, footer {
+  color: #64748b;
+  font-size: 0.8em;
+}
+
+section::after {
+  color: #94a3b8;
+}

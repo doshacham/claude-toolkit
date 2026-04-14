@@ -1,0 +1,115 @@
+/* Copyright (c) 2026 Dor Shacham <dorishacham52@gmail.com>. All rights reserved.
+   SPDX-License-Identifier: Proprietary */
+
+/* @theme midnight */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+@import 'default';
+
+section {
+  background: #0a0e27;
+  color: #e2e8f0;
+  color-scheme: dark;
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  font-size: 24px;
+  padding: 40px 56px;
+  overflow-y: auto;
+}
+
+h1, h2, h3, h4 {
+  color: #f1f5f9;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  border-bottom: 3px solid #6366f1;
+  padding-bottom: 0.2em;
+}
+
+h2 {
+  color: #a5b4fc;
+}
+
+a {
+  color: #22d3ee;
+}
+
+strong {
+  color: #f472b6;
+}
+
+code {
+  background: #1e293b;
+  color: #fcd34d;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', 'Cascadia Mono', monospace;
+}
+
+pre {
+  background: #0f172a;
+  border-left: 4px solid #6366f1;
+  padding: 1em;
+  border-radius: 6px;
+}
+
+pre code {
+  background: transparent;
+  color: #e2e8f0;
+}
+
+table {
+  border-collapse: collapse;
+  background: #0f172a;
+  width: 100%;
+  display: table;
+}
+
+th {
+  background: #1e293b;
+  color: #a5b4fc;
+  border: 1px solid #334155;
+  padding: 0.5em 0.8em;
+}
+
+td {
+  border: 1px solid #334155;
+  padding: 0.5em 0.8em;
+}
+
+tr {
+  background: #0f172a;
+}
+
+tr:nth-child(2n) {
+  background: #1a2332;
+}
+
+blockquote {
+  border-left: 4px solid #22d3ee;
+  color: #cbd5e1;
+  font-style: italic;
+}
+
+section.lead {
+  text-align: center;
+  background: radial-gradient(circle at center, #1e1b4b 0%, #0a0e27 70%);
+}
+
+section.lead h1 {
+  border: none;
+  font-size: 2.02em;
+  background: linear-gradient(90deg, #22d3ee, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+header, footer {
+  color: #94a3b8;
+}
+
+section::after {
+  color: #94a3b8;
+}

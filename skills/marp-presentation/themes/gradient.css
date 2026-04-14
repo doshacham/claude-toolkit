@@ -1,0 +1,138 @@
+/* Copyright (c) 2026 Dor Shacham <dorishacham52@gmail.com>. All rights reserved.
+   SPDX-License-Identifier: Proprietary */
+
+/* @theme gradient */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400&display=swap');
+@import 'default';
+
+section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: #ffffff;
+  color-scheme: dark;
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  font-size: 24px;
+  padding: 40px 56px;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+h1, h2, h3, h4 {
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.39em;
+  opacity: 0.95;
+}
+
+h3 {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.6);
+}
+
+strong {
+  color: #fef08a;
+  font-weight: 700;
+}
+
+em {
+  color: #fce7f3;
+}
+
+code {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: #fef08a;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+pre {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1em;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+pre code {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  display: table;
+}
+
+th {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 0.6em 1em;
+}
+
+td {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.5em 1em;
+}
+
+tr {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+tr:nth-child(2n) {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+blockquote {
+  border-left: 4px solid #fef08a;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.8em 1.2em;
+  border-radius: 0 12px 12px 0;
+  color: #ffffff;
+  margin-left: 0;
+}
+
+section.lead {
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #f093fb 50%, #fbbf24 100%);
+}
+
+section.lead h1 {
+  font-size: 2.88em;
+  font-weight: 900;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+header, footer {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+section::after {
+  color: rgba(255, 255, 255, 0.6);
+}
