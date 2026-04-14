@@ -1,285 +1,341 @@
-# Claude Toolkit
-
-> **23 skills · 15 commands · 7 agents · 4 plugins · 4 autonomous loops**
->
-> A batteries-included toolkit for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — drop it into `~/.claude/` and get superpowers.
+<p align="center">
+  <h1 align="center">🧰 Claude Toolkit</h1>
+  <p align="center">
+    <strong>Make Claude Code unreasonably good at engineering.</strong>
+    <br />
+    <em>23 skills · 15 commands · 7 agents · 4 plugins · 4 autonomous loops</em>
+  </p>
+  <p align="center">
+    <a href="#-quick-start">Quick Start</a> · <a href="#-skills">Skills</a> · <a href="#-commands">Commands</a> · <a href="#-agents">Agents</a> · <a href="#-plugins">Plugins</a> · <a href="#-autonomous-loops">Loops</a> · <a href="docs/">Docs</a>
+  </p>
+</p>
 
 ---
 
-## What This Is
+Drop markdown files into `~/.claude/` and Claude Code gains superpowers. No build step. No config. No registration. It just works.
 
-A personal collection of everything that makes Claude Code actually useful for real engineering work. Skills that auto-trigger when you need them. Slash commands for common workflows. Specialized agents that think before they code. Autonomous loops that build while you sleep.
+Skills auto-trigger when you need them. Agents think before they code. Loops build while you sleep.
 
-**Not a framework.** Not a library. Just markdown files and Python scripts that Claude Code reads and follows. Copy what you want into `~/.claude/` and it works.
+```bash
+git clone https://github.com/doshacham/claude-toolkit.git
+cp -r claude-toolkit/{skills,commands,agents} ~/.claude/
+```
+
+That's it. Next time Claude Code starts, everything is live.
+
+---
+
+## 📑 Table of Contents
+
+- [🚀 Quick Start](#-quick-start)
+- [🧠 Skills](#-skills) — 23 auto-triggered capabilities
+- [⌘ Commands](#-commands) — 15 slash commands
+- [🤖 Agents](#-agents) — 7 specialized sub-agents
+- [🔌 Plugins](#-plugins) — 4 bundled packages
+- [🔄 Autonomous Loops](#-autonomous-loops) — build on autopilot
+- [🛡️ Infrastructure](#️-infrastructure) — hooks, scripts, rules
+- [📐 Architecture](#-architecture) — how it all connects
+- [📁 Repo Structure](#-repo-structure)
+- [🗺️ Cheat Sheet](#️-cheat-sheet)
 
 ---
 
 ## 🚀 Quick Start
 
+**Everything:**
+
 ```bash
-# clone it
-git clone https://github.com/doshacham/claude-toolkit.git
-
-# copy everything into your Claude Code config
-cp -r claude-toolkit/skills/ ~/.claude/
-cp -r claude-toolkit/commands/ ~/.claude/
-cp -r claude-toolkit/agents/ ~/.claude/
-
-# or cherry-pick what you need
-cp -r claude-toolkit/skills/synthesizer/ ~/.claude/skills/
-cp -r claude-toolkit/skills/karpathy-guidelines/ ~/.claude/skills/
+cp -r skills/ commands/ agents/ ~/.claude/
 ```
 
-No registration, no config files, no build step. Claude auto-discovers everything from `~/.claude/`.
+**Cherry-pick what you need:**
+
+```bash
+# just the Karpathy discipline skill
+cp -r skills/karpathy-guidelines/ ~/.claude/skills/
+
+# just the deep codebase analyzer
+cp -r skills/synthesizer/ ~/.claude/skills/
+
+# just the slash commands
+cp -r commands/ ~/.claude/
+```
+
+Claude auto-discovers everything from `~/.claude/`. Zero configuration.
 
 ---
 
 ## 🧠 Skills
 
-Skills auto-trigger based on what you're doing — no slash command needed. Ask Claude to "debug this test failure" and the `systematic-debugging` skill kicks in automatically.
+> Skills are the core of the toolkit. They auto-trigger based on what you're doing — you don't type a command, Claude just *knows* when to use them.
+>
+> Say *"debug this test failure"* and `systematic-debugging` activates. Say *"improve the architecture"* and `improve-codebase-architecture` kicks in.
 
 ### 🔍 Debugging & Quality
 
-| Skill | What It Does |
+| Skill | What Happens |
 |-------|-------------|
-| **systematic-debugging** | 4-phase root-cause investigation — no fixes without evidence first |
-| **debugging-and-error-recovery** | Stop-the-line triage when builds break or tests fail |
-| **defense-in-depth** | Multi-layer validation after bug fixes — make the bug *structurally impossible* |
-| **code-review-and-quality** | Multi-axis code review (correctness, security, performance, maintainability) |
+| 🔬 **[systematic-debugging](skills/systematic-debugging/)** | 4-phase root-cause investigation. No fixes until you have evidence. |
+| 🩺 **[debugging-and-error-recovery](skills/debugging-and-error-recovery/)** | Stop-the-line triage — when builds break, this is your ER. |
+| 🛡️ **[defense-in-depth](skills/defense-in-depth/)** | After fixing a bug: validate at 4 layers so it *can't come back*. |
+| 🔍 **[code-review-and-quality](skills/code-review-and-quality/)** | Multi-axis review with security, performance, and accessibility checklists. |
 
 ### 🏗️ Architecture & Design
 
-| Skill | What It Does |
+| Skill | What Happens |
 |-------|-------------|
-| **improve-codebase-architecture** | Find shallow modules, design deep-module refactors, file GitHub RFCs |
-| **design-an-interface** | Spawn 3+ parallel agents with radically different interface designs |
-| **improve-claude-md** | Rewrite CLAUDE.md with `<important if>` conditional blocks |
-| **context-engineering** | Optimize what context Claude loads — hierarchy, selective includes |
+| 🏗️ **[improve-codebase-architecture](skills/improve-codebase-architecture/)** | Find shallow modules → design deep-module interfaces → file GitHub RFC. |
+| 🎨 **[design-an-interface](skills/design-an-interface/)** | Spawn 3+ parallel agents, each with a *radically* different design. |
+| 📐 **[improve-claude-md](skills/improve-claude-md/)** | Rewrite your CLAUDE.md so Claude actually follows the rules. |
+| 🧠 **[context-engineering](skills/context-engineering/)** | When Claude's output quality drops, this fixes what context it loads. |
 
 ### 📋 Planning & Execution
 
-| Skill | What It Does |
+| Skill | What Happens |
 |-------|-------------|
-| **planning-and-task-breakdown** | Break work into ordered tasks with acceptance criteria |
-| **spec-driven-development** | Write a spec before coding — SPECIFY → PLAN → TASKS → IMPLEMENT |
-| **incremental-implementation** | Deliver in thin vertical slices — implement, test, verify, commit |
-| **source-driven-development** | Ground every decision in official docs — fetch, implement, cite |
+| 📋 **[planning-and-task-breakdown](skills/planning-and-task-breakdown/)** | Big task? Break it into ordered tasks with acceptance criteria. |
+| 📝 **[spec-driven-development](skills/spec-driven-development/)** | Spec first, code second. SPECIFY → PLAN → TASKS → IMPLEMENT. |
+| 🧱 **[incremental-implementation](skills/incremental-implementation/)** | Thin vertical slices — implement, test, verify, commit. Repeat. |
+| 📖 **[source-driven-development](skills/source-driven-development/)** | Every decision grounded in official docs. No guessing at APIs. |
 
 ### 🧪 Testing
 
-| Skill | What It Does |
+| Skill | What Happens |
 |-------|-------------|
-| **test-driven-development** | Full TDD with red-green-refactor, prove-it pattern for bugs |
-| **tdd** | Lightweight TDD — quick red-green-refactor invocation |
+| 🧪 **[test-driven-development](skills/test-driven-development/)** | Full TDD — red/green/refactor + prove-it pattern for bugs. |
+| 🧪 **[tdd](skills/tdd/)** | Quick lightweight TDD invocation. |
 
 ### 🔬 Analysis & Research
 
-| Skill | What It Does |
+| Skill | What Happens |
 |-------|-------------|
-| **synthesizer** | 6-phase deep codebase analysis with parallel agents and quality scoring |
-| **read-arxiv** | Download arxiv paper TeX sources → structured summary |
-| **ingest** | LLM Wiki pattern — process raw sources into interlinked wiki pages |
+| 🧬 **[synthesizer](skills/synthesizer/)** | 6-phase deep codebase analysis. 10 Python scripts. Parallel agents. Quality grade A-F. |
+| 📄 **[read-arxiv](skills/read-arxiv/)** | Paste an arxiv link → get a structured summary from the TeX source. |
+| 📥 **[ingest](skills/ingest/)** | Karpathy's LLM Wiki pattern — raw sources → interlinked wiki pages. |
 
 ### 🧭 Behavioral
 
-| Skill | What It Does |
+| Skill | What Happens |
 |-------|-------------|
-| **karpathy-guidelines** | 4 principles: Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven |
-| **grill-me** | Relentless interview about your plan until every assumption is surfaced |
-| **request-refactor-plan** | Interactive interview → tiny-commit plan → GitHub issue RFC |
+| 🧭 **[karpathy-guidelines](skills/karpathy-guidelines/)** | Think Before Coding · Simplicity First · Surgical Changes · Goal-Driven. |
+| 🔥 **[grill-me](skills/grill-me/)** | Ruthless interview about your plan until every assumption is exposed. |
+| 🔧 **[request-refactor-plan](skills/request-refactor-plan/)** | Interview → tiny-commit plan → GitHub issue RFC. |
 
-### 🔧 Domain-Specific
+### 💎 Domain-Specific
 
-| Skill | What It Does |
+| Skill | What Happens |
 |-------|-------------|
-| **obsidian** | Full Obsidian vault operations — CLI, Dataview, Templater, PKM workflows |
-| **marp-presentation** | Slide decks with 15 themes, Playwright QA, multi-format export |
-| **ci-cd-and-automation** | CI/CD pipeline setup — quality gates, test runners, deployment |
+| 💎 **[obsidian](skills/obsidian/)** | Full Obsidian mastery — CLI, Dataview, Templater, 15 reference docs, 10 templates. |
+| 📊 **[marp-presentation](skills/marp-presentation/)** | Slide decks with 15 themes, 14 scripts, Playwright QA verification. |
+| 🔄 **[ci-cd-and-automation](skills/ci-cd-and-automation/)** | CI/CD pipelines — quality gates, test runners, deployment strategies. |
 
-> 📖 **[Full skill documentation →](docs/skills.md)** — trigger phrases, internals, reference files, scripts
+> 📖 **Deep dive →** [docs/skills.md](docs/skills.md) — trigger phrases, internals, reference files, every script documented.
 
 ---
 
 ## ⌘ Commands
 
-Slash commands you type directly. Each one wires into a skill.
+> Type `/command-name` and go. Each command wires into a skill and passes your arguments through.
 
 | Command | What It Does |
 |---------|-------------|
-| `/karpathy` | Apply the 4 Karpathy principles to current work |
-| `/debug` | Systematic root-cause debugging — investigate before fixing |
-| `/debug-recover` | Stop-the-line error recovery — triage → reproduce → fix → guard |
-| `/defense-in-depth` | Add validation at every layer after a bug fix |
-| `/tdd` | Red → Green → Refactor development loop |
-| `/spec` | Write a structured spec before coding |
-| `/plan` | Break work into ordered tasks with acceptance criteria |
-| `/incremental` | Build in thin vertical slices |
-| `/improve-architecture` | Find deep-module refactoring opportunities |
-| `/improve-claude-md` | Optimize a CLAUDE.md with conditional blocks |
-| `/request-refactor-plan` | Interview → tiny-commit plan → GitHub issue |
-| `/synthesize` | Deep 6-phase codebase analysis with quality scorecard |
-| `/source-check` | Verify implementation against official documentation |
-| `/ci-cd` | Set up or modify CI/CD pipelines |
-| `/context` | Optimize agent context for better output quality |
+| 🧭 `/karpathy` | Apply the 4 Karpathy principles |
+| 🔍 `/debug` | Investigate before fixing — 4-phase root-cause debugging |
+| 🩺 `/debug-recover` | Stop-the-line error recovery |
+| 🛡️ `/defense-in-depth` | Validate at every layer after a bug fix |
+| 🧪 `/tdd` | Red → Green → Refactor |
+| 📝 `/spec` | Write a spec before coding |
+| 📋 `/plan` | Break work into ordered tasks |
+| 🧱 `/incremental` | Build in thin vertical slices |
+| 🏗️ `/improve-architecture` | Find deep-module refactoring opportunities |
+| 📐 `/improve-claude-md` | Optimize your CLAUDE.md |
+| 🔧 `/request-refactor-plan` | Interview → tiny commits → GitHub issue |
+| 🧬 `/synthesize` | Deep 6-phase codebase analysis |
+| 📖 `/source-check` | Verify against official docs |
+| 🔄 `/ci-cd` | Set up CI/CD pipelines |
+| 🧠 `/context` | Optimize agent context |
 
-> 📖 **[Full command reference →](docs/commands.md)**
+> 📖 **Deep dive →** [docs/commands.md](docs/commands.md)
 
 ---
 
 ## 🤖 Agents
 
-Specialized sub-agents that Claude spawns for focused work. Each has its own tools, model, and personality.
+> Agents are like coworkers Claude can call in. Each one has its own personality, tool set, and area of expertise.
 
-| Agent | Purpose |
-|-------|---------|
-| 🟦 **karpathy-engineer** | Disciplined implementer — won't overcomplicate, won't assume, won't skip verification |
-| 🟨 **architecture-improver** | Explore → surface friction → design interfaces → file GitHub RFC |
-| 🟦 **synthesizer** | 6-phase codebase analysis with parallel documenter agents |
-| 🟩 **claude-md-improver** | Rewrite CLAUDE.md with `<important if>` blocks |
-| 🔵 **refactor-planner** | Structured interview → tiny-commit plan → GitHub issue |
-| 🟣 **obsidian** | Full Obsidian vault expert — CLI, Dataview, Templater, PKM |
-| 🟤 **presenter** | Marp slide decks with design thinking and Playwright QA |
+| Agent | What It Does |
+|-------|-------------|
+| 🟦 **karpathy-engineer** | The disciplined one — won't overcomplicate, won't assume, won't skip verification. |
+| 🟨 **architecture-improver** | Explores your codebase, surfaces friction, designs interfaces, files GitHub RFCs. |
+| 🟦 **synthesizer** | Dispatches parallel documenter agents, runs validation scripts, grades your codebase A-F. |
+| 🟩 **claude-md-improver** | Makes your CLAUDE.md actually work with `<important if>` conditional blocks. |
+| 🔵 **refactor-planner** | Interviews you, explores the code, produces a tiny-commit plan as a GitHub issue. |
+| 🟣 **obsidian** | The Obsidian vault expert — CLI, Dataview, Templater, PKM, everything. |
+| 🟤 **presenter** | Creates Marp slide decks, picks themes, runs Playwright QA on every slide. |
 
-> 📖 **[Full agent documentation →](docs/agents.md)** — tools, models, colors, skill preloads
+> 📖 **Deep dive →** [docs/agents.md](docs/agents.md) — tools, models, skill preloads, behaviors.
 
 ---
 
 ## 🔌 Plugins
 
-Self-contained packages with commands + skills + agents + scripts.
+> Self-contained packages that bundle commands + skills + agents + scripts together.
 
 | Plugin | What It Does |
 |--------|-------------|
-| 📚 **learn** | Structured concept explanations — definition, analogy, examples, takeaways |
-| 📰 **paper** | Generate newspaper-style dev-blog articles from any codebase |
-| 🐛 **triagger** | Bug triage → root cause → TDD fix plan → GitHub issue |
-| ✏️ **write-a-skill** | Interactive Claude Code skill creation wizard |
+| 📚 **[learn](plugins/learn/)** | Explain any concept — definition, analogy, examples, takeaways. Adapts to your level. |
+| 📰 **[paper](plugins/paper/)** | Turn any codebase into a newspaper-style dev-blog article. 1,500-3,000 words. |
+| 🐛 **[triagger](plugins/triagger/)** | Bug report → root cause → TDD fix plan → GitHub issue. Fully autonomous. |
+| ✏️ **[write-a-skill](plugins/write-a-skill/)** | Interactive wizard for creating new Claude Code skills from scratch. |
 
-> 📖 **[Full plugin documentation →](docs/plugins.md)** — directory structures, components, usage
+> 📖 **Deep dive →** [docs/plugins.md](docs/plugins.md)
 
 ---
 
 ## 🔄 Autonomous Loops
 
-Continuous bash loops that drive Claude through plan → build → test → commit cycles. Based on the [Ralph methodology](https://ghuntley.com/ralph/).
+> Based on the [Ralph methodology](https://ghuntley.com/ralph/). Bash loops that drive Claude through plan → build → test → commit cycles. Each iteration starts with a fresh context — `IMPLEMENTATION_PLAN.md` is the shared memory.
 
-| Loop | What's Different |
-|------|-----------------|
-| 📘 **[how-to-ralph-wiggum](loops/how-to-ralph-wiggum/)** | The reference guide — start here |
-| 🪟 **[ralph-loop](loops/ralph-loop/)** | Windows + Max plan — sentinel watcher, no API credits needed |
-| 🔧 **[claude-loop](loops/claude-loop/)** | Extended — adds fix, audit, and specs interview modes |
-| ⚡ **[ralph-wiggum-files](loops/ralph-wiggum-files/)** | Refined API-mode templates — Sonnet/Opus subagents, Ultrathink |
+| Loop | Best For |
+|------|---------|
+| 📘 **[how-to-ralph-wiggum](loops/how-to-ralph-wiggum/)** | Learning the methodology — start here |
+| 🪟 **[ralph-loop](loops/ralph-loop/)** | Windows + Max plan — no API credits needed |
+| 🔧 **[claude-loop](loops/claude-loop/)** | Power users — adds fix, audit, and specs modes |
+| ⚡ **[ralph-wiggum-files](loops/ralph-wiggum-files/)** | API mode — Sonnet reads, Opus reasons, Ultrathink plans |
 
-> 📖 **[Full loop documentation →](docs/loops.md)** — phases, file-based state, sentinel watcher
+**The three phases:**
+
+```
+📋 Phase 1: Specs     →  Interview you about requirements
+📝 Phase 2: Plan      →  Generate IMPLEMENTATION_PLAN.md from gap analysis
+🔨 Phase 3: Build     →  Pick task → TDD → commit → push → repeat
+```
+
+> 📖 **Deep dive →** [docs/loops.md](docs/loops.md) — phases, file-based state, sentinel watcher.
 
 ---
 
 ## 🛡️ Infrastructure
 
-Hooks, scripts, and rules that run automatically.
-
 | Component | What It Does |
 |-----------|-------------|
-| `hooks/guard-commit-attribution.sh` | Blocks AI attribution lines in git commits |
-| `hooks/guard-agent-policy.sh` | Enforces agent spawning policies |
-| `hooks/add-license-header.sh` | Auto-adds copyright headers to new files |
-| `scripts/show-skills.sh` | Session startup banner — lists all available skills and commands |
-| `status_lines/status_line.sh` | Status bar display script |
-| `rules/license-header.md` | License header rule for new file creation |
+| 🚫 [`hooks/guard-commit-attribution.sh`](hooks/guard-commit-attribution.sh) | Blocks AI attribution lines in commits |
+| 🔒 [`hooks/guard-agent-policy.sh`](hooks/guard-agent-policy.sh) | Enforces agent spawning policies |
+| 📄 [`hooks/add-license-header.sh`](hooks/add-license-header.sh) | Auto-adds copyright headers to new files |
+| ✨ [`scripts/show-skills.sh`](scripts/show-skills.sh) | Session startup banner — your toolkit at a glance |
+| 📊 [`status_lines/status_line.sh`](status_lines/status_line.sh) | Status bar display |
+| 📜 [`rules/license-header.md`](rules/license-header.md) | License header rule |
 
 ---
 
-## 📐 How It All Fits Together
+## 📐 Architecture
+
+> How the pieces connect when you type something in Claude Code.
 
 ```
-              ┌─────────────────────────┐
-              │      You type...        │
-              │                         │
-              │  "/debug this failure"  │
-              │  "improve architecture" │
-              │  "/synthesize repo"     │
-              └───────────┬─────────────┘
-                          │
-                ┌─────────▼─────────┐
-                │   Claude Code     │
-                │   reads ~/.claude │
-                └────┬─────────┬────┘
-                     │         │
-            ┌────────▼──┐  ┌───▼────────┐
-            │  Command  │  │   Skill    │
-            │  (manual) │  │  (auto)    │
-            └────┬──────┘  └───┬────────┘
-                 │             │
-            ┌────▼─────────────▼────┐
-            │       Agent           │
-            │  (if complex work)    │
-            │                       │
-            │  Can spawn parallel   │
-            │  sub-agents for       │
-            │  interface design,    │
-            │  codebase analysis,   │
-            │  etc.                 │
-            └────┬─────────────┬────┘
-                 │             │
-            ┌────▼─────┐ ┌────▼─────┐
-            │ Scripts  │ │  Hooks   │
-            │ (Python) │ │  (Bash)  │
-            └──────────┘ └──────────┘
+                  ┌─────────────────────────────┐
+                  │        You type...          │
+                  │                             │
+                  │   "/debug this failure"     │
+                  │   "improve architecture"    │
+                  │   "/synthesize my-repo"     │
+                  └──────────────┬──────────────┘
+                                 │
+                  ┌──────────────▼──────────────┐
+                  │        Claude Code          │
+                  │     reads ~/.claude/        │
+                  └──────┬──────────────┬───────┘
+                         │              │
+               ┌─────────▼───┐   ┌──────▼─────────┐
+               │  ⌘ Command  │   │  🧠 Skill      │
+               │   (manual)  │   │   (auto)       │
+               └─────┬───────┘   └──────┬─────────┘
+                     │                  │
+               ┌─────▼──────────────────▼──────┐
+               │         🤖 Agent              │
+               │    (spawned if needed)        │
+               │                               │
+               │    Can launch parallel        │
+               │    sub-agents for interface   │
+               │    design, codebase analysis  │
+               └─────┬────────────────┬────────┘
+                     │                │
+               ┌─────▼─────┐   ┌─────▼─────┐
+               │ 🐍 Scripts │   │ 🛡️ Hooks  │
+               │  (Python)  │   │  (Bash)   │
+               └────────────┘   └───────────┘
 ```
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repo Structure
 
 ```
 claude-toolkit/
-├── skills/            # 23 auto-triggered skills
-│   ├── synthesizer/   #   └── 10 Python scripts, XML template, references
-│   ├── obsidian/      #   └── 15 reference docs, 10 templates
-│   ├── marp-presentation/ # └── 15 themes, 14 scripts, 5 templates
-│   └── ...            #   └── each has SKILL.md + optional refs
-├── commands/          # 15 slash commands
-├── agents/            # 7 specialized agents
-├── plugins/           # 4 bundled plugins
-│   ├── learn/         #   └── command + agent + skill + references
-│   ├── paper/         #   └── command + skill + writing guides
-│   ├── triagger/      #   └── command + agent + 5 bash scripts
-│   └── write-a-skill/ #   └── interactive skill creation wizard
-├── loops/             # 4 autonomous loop variants
-├── hooks/             # 4 policy enforcement hooks
-├── rules/             # 1 rule (license headers)
-├── scripts/           # 1 session startup script
-├── status_lines/      # 1 status bar script
-└── docs/              # detailed technical documentation
-    ├── skills.md
-    ├── agents.md
-    ├── commands.md
-    ├── plugins.md
-    └── loops.md
+│
+├── 🧠 skills/               23 auto-triggered skills
+│   ├── synthesizer/          ├── 10 Python scripts + XML template
+│   ├── obsidian/             ├── 15 reference docs + 10 templates
+│   ├── marp-presentation/    ├── 15 themes + 14 scripts + 5 templates
+│   ├── karpathy-guidelines/  ├── the 4 principles
+│   └── ...                   └── each has SKILL.md + optional refs
+│
+├── ⌘ commands/               15 slash commands
+├── 🤖 agents/                7 specialized agents
+│
+├── 🔌 plugins/               4 self-contained packages
+│   ├── learn/                ├── concept explainer
+│   ├── paper/                ├── dev-blog generator
+│   ├── triagger/             ├── bug triage → GitHub issue
+│   └── write-a-skill/        └── skill creation wizard
+│
+├── 🔄 loops/                 4 autonomous loop variants
+│   ├── how-to-ralph-wiggum/  ├── the reference guide
+│   ├── ralph-loop/           ├── Windows + Max plan
+│   ├── claude-loop/          ├── extended (fix/audit modes)
+│   └── ralph-wiggum-files/   └── API mode templates
+│
+├── 🛡️ hooks/                 4 policy hooks
+├── 📜 rules/                 1 rule
+├── ✨ scripts/               1 session startup script
+├── 📊 status_lines/          1 status bar script
+│
+├── 📖 docs/                  technical reference
+│   ├── skills.md
+│   ├── agents.md
+│   ├── commands.md
+│   ├── plugins.md
+│   └── loops.md
+│
+└── 📋 llms.txt               LLM-friendly description
 ```
 
 ---
 
-## 🗺️ "I want to..."
+## 🗺️ Cheat Sheet
 
-| I want to... | Use this |
-|--------------|----------|
-| Debug a bug properly | `/debug` or `systematic-debugging` skill |
-| Plan a feature | `/plan` or `/spec` |
-| Build with tests first | `/tdd` |
-| Analyze a codebase deeply | `/synthesize` |
-| Design a module interface | `design-an-interface` skill |
-| Improve my architecture | `/improve-architecture` |
-| Refactor safely | `/request-refactor-plan` |
-| Make a presentation | `marp-presentation` skill |
-| Work with Obsidian | `obsidian` skill |
-| Code with discipline | `/karpathy` |
-| Stress-test my design | `grill-me` skill |
-| Run autonomous builds | See `loops/` directory |
-| Create a new skill | `/write-a-skill` (plugin) |
+> *"I want to..."*
+
+| Goal | What to use |
+|------|------------|
+| 🐛 Debug a bug properly | `/debug` or say *"debug this"* |
+| 📋 Plan a feature | `/plan` or `/spec` |
+| 🧪 Build with tests first | `/tdd` |
+| 🔬 Analyze a codebase deeply | `/synthesize` |
+| 🎨 Design a module interface | Say *"design an interface for..."* |
+| 🏗️ Improve architecture | `/improve-architecture` |
+| 🔧 Refactor safely | `/request-refactor-plan` |
+| 📊 Make a presentation | Say *"create a slide deck"* |
+| 💎 Work with Obsidian vaults | Say *"Obsidian..."* |
+| 🧭 Code with Karpathy discipline | `/karpathy` |
+| 🔥 Stress-test my design | Say *"grill me"* |
+| 🔄 Run autonomous builds | Check out `loops/` |
+| ✏️ Create a new skill | `/write-a-skill` |
+| 📚 Explain a concept | `/learn` (plugin) |
+| 📰 Write a dev-blog article | `/paper` (plugin) |
 
 ---
 
-## Author
-
-**Dor Shacham** — [github.com/doshacham](https://github.com/doshacham)
+<p align="center">
+  <strong>Built by <a href="https://github.com/doshacham">Dor Shacham</a></strong> — making Claude Code unreasonably effective, one skill at a time.
+</p>
