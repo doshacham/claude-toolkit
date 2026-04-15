@@ -9,9 +9,9 @@ A collection of markdown files and Python scripts that extend Claude Code. Drop 
 ## Repository Structure
 
 - skills/ — 23 auto-triggered skills (markdown + optional scripts/references)
-- commands/ — 15 slash commands (markdown with YAML frontmatter)
-- agents/ — 7 specialized sub-agents (markdown with YAML frontmatter)
-- plugins/ — 4 bundled plugins (learn, paper, triagger, write-a-skill)
+- commands/ — 18 slash commands (markdown with YAML frontmatter)
+- agents/ — 10 specialized sub-agents (markdown with YAML frontmatter)
+- plugins/ — 5 bundled plugins (learn, paper, prd, triagger, write-a-skill)
 - loops/ — 4 autonomous bash loop variants (Ralph methodology)
 - hooks/ — 4 policy enforcement hooks (bash scripts)
 - rules/ — 1 rule (license headers)
@@ -38,15 +38,15 @@ Domain: obsidian (vault operations), marp-presentation (slide decks), ci-cd-and-
 
 ## Commands
 
-/karpathy, /debug, /debug-recover, /defense-in-depth, /tdd, /spec, /plan, /incremental, /improve-architecture, /improve-claude-md, /request-refactor-plan, /synthesize, /source-check, /ci-cd, /context
+/karpathy, /debug, /debug-recover, /defense-in-depth, /tdd, /spec, /plan, /incremental, /improve-architecture, /improve-claude-md, /request-refactor-plan, /synthesize, /source-check, /ci-cd, /context, /write-a-prd, /prd-to-issues, /prd-to-plan
 
 ## Agents
 
-karpathy-engineer (disciplined implementer), architecture-improver (refactor RFCs), synthesizer (codebase analysis), claude-md-improver (CLAUDE.md optimization), refactor-planner (interview to plan), obsidian (vault expert), presenter (slide decks)
+karpathy-engineer (disciplined implementer), architecture-improver (refactor RFCs), synthesizer (codebase analysis), claude-md-improver (CLAUDE.md optimization), refactor-planner (interview to plan), obsidian (vault expert), presenter (slide decks), prd-writer (codebase-grounded PRDs), prd-issue-breaker (PRD to vertical-slice issues), prd-planner (PRD to phased plans)
 
 ## Plugins
 
-learn (concept explanations), paper (dev-blog articles), triagger (bug triage to GitHub issues), write-a-skill (skill creation wizard)
+learn (concept explanations), paper (dev-blog articles), prd (PRD authoring, issue breakdown, implementation planning), triagger (bug triage to GitHub issues), write-a-skill (skill creation wizard)
 
 ## Loops
 

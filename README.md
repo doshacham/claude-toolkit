@@ -3,7 +3,7 @@
   <p align="center">
     <strong>Make Claude Code unreasonably good at engineering.</strong>
     <br />
-    <em>23 skills · 15 commands · 7 agents · 4 plugins · 4 autonomous loops</em>
+    <em>23 skills · 18 commands · 10 agents · 5 plugins · 4 autonomous loops</em>
   </p>
   <p align="center">
     <a href="#-quick-start">Quick Start</a> · <a href="#-skills">Skills</a> · <a href="#-commands">Commands</a> · <a href="#-agents">Agents</a> · <a href="#-plugins">Plugins</a> · <a href="#-autonomous-loops">Loops</a> · <a href="docs/">Docs</a>
@@ -30,8 +30,8 @@ That's it. Next time Claude Code starts, everything is live.
 - [🚀 Quick Start](#-quick-start)
 - [🧠 Skills](#-skills) — 23 auto-triggered capabilities
 - [⌘ Commands](#-commands) — 15 slash commands
-- [🤖 Agents](#-agents) — 7 specialized sub-agents
-- [🔌 Plugins](#-plugins) — 4 bundled packages
+- [🤖 Agents](#-agents) — 10 specialized sub-agents
+- [🔌 Plugins](#-plugins) — 5 bundled packages
 - [🔄 Autonomous Loops](#-autonomous-loops) — build on autopilot
 - [🛡️ Infrastructure](#️-infrastructure) — hooks, scripts, rules
 - [📐 Architecture](#-architecture) — how it all connects
@@ -154,6 +154,9 @@ Claude auto-discovers everything from `~/.claude/`. Zero configuration.
 | 📖 `/source-check` | Verify against official docs |
 | 🔄 `/ci-cd` | Set up CI/CD pipelines |
 | 🧠 `/context` | Optimize agent context |
+| 📋 `/write-a-prd` | Interview → structured PRD → GitHub issue |
+| 🗂️ `/prd-to-issues` | Break a PRD into vertical-slice GitHub issues |
+| 🗺️ `/prd-to-plan` | Turn a PRD into a phased implementation plan |
 
 > 📖 **Deep dive →** [docs/commands.md](docs/commands.md)
 
@@ -165,13 +168,16 @@ Claude auto-discovers everything from `~/.claude/`. Zero configuration.
 
 | Agent | What It Does |
 |-------|-------------|
-| 🟦 **karpathy-engineer** | The disciplined one — won't overcomplicate, won't assume, won't skip verification. |
-| 🟨 **architecture-improver** | Explores your codebase, surfaces friction, designs interfaces, files GitHub RFCs. |
-| 🟦 **synthesizer** | Dispatches parallel documenter agents, runs validation scripts, grades your codebase A-F. |
-| 🟩 **claude-md-improver** | Makes your CLAUDE.md actually work with `<important if>` conditional blocks. |
-| 🔵 **refactor-planner** | Interviews you, explores the code, produces a tiny-commit plan as a GitHub issue. |
-| 🟣 **obsidian** | The Obsidian vault expert — CLI, Dataview, Templater, PKM, everything. |
-| 🟤 **presenter** | Creates Marp slide decks, picks themes, runs Playwright QA on every slide. |
+| 🧭 **karpathy-engineer** | The disciplined one — won't overcomplicate, won't assume, won't skip verification. |
+| 🏗️ **architecture-improver** | Explores your codebase, surfaces friction, designs interfaces, files GitHub RFCs. |
+| 🧬 **synthesizer** | Dispatches parallel documenter agents, runs validation scripts, grades your codebase A-F. |
+| 📐 **claude-md-improver** | Makes your CLAUDE.md actually work with `<important if>` conditional blocks. |
+| 🔧 **refactor-planner** | Interviews you, explores the code, produces a tiny-commit plan as a GitHub issue. |
+| 💎 **obsidian** | The Obsidian vault expert — CLI, Dataview, Templater, PKM, everything. |
+| 📊 **presenter** | Creates Marp slide decks, picks themes, runs Playwright QA on every slide. |
+| 📋 **prd-writer** | Researches codebase to draft technically grounded PRDs with real architecture context. |
+| 🗂️ **prd-issue-breaker** | Breaks PRDs into thin HITL/AFK vertical slices with dependency graphs. |
+| 🗺️ **prd-planner** | Creates phased implementation plans with durable architectural decisions. |
 
 > 📖 **Deep dive →** [docs/agents.md](docs/agents.md) — tools, models, skill preloads, behaviors.
 
@@ -185,6 +191,7 @@ Claude auto-discovers everything from `~/.claude/`. Zero configuration.
 |--------|-------------|
 | 📚 **[learn](plugins/learn/)** | Explain any concept — definition, analogy, examples, takeaways. Adapts to your level. |
 | 📰 **[paper](plugins/paper/)** | Turn any codebase into a newspaper-style dev-blog article. 1,500-3,000 words. |
+| 📋 **[prd](plugins/prd/)** | Full PRD lifecycle — write, break into issues, or plan phases. 3 agents included. |
 | 🐛 **[triagger](plugins/triagger/)** | Bug report → root cause → TDD fix plan → GitHub issue. Fully autonomous. |
 | ✏️ **[write-a-skill](plugins/write-a-skill/)** | Interactive wizard for creating new Claude Code skills from scratch. |
 
@@ -281,11 +288,12 @@ claude-toolkit/
 │   └── ...                   └── each has SKILL.md + optional refs
 │
 ├── ⌘ commands/               15 slash commands
-├── 🤖 agents/                7 specialized agents
+├── 🤖 agents/                10 specialized agents
 │
-├── 🔌 plugins/               4 self-contained packages
+├── 🔌 plugins/               5 self-contained packages
 │   ├── learn/                ├── concept explainer
 │   ├── paper/                ├── dev-blog generator
+│   ├── prd/                  ├── PRD lifecycle (write → issues → plan)
 │   ├── triagger/             ├── bug triage → GitHub issue
 │   └── write-a-skill/        └── skill creation wizard
 │
@@ -319,6 +327,9 @@ claude-toolkit/
 | Goal | What to use |
 |------|------------|
 | 🐛 Debug a bug properly | `/debug` or say *"debug this"* |
+| 📋 Write a PRD from scratch | `/write-a-prd` |
+| 🗂️ Break a PRD into issues | `/prd-to-issues` |
+| 🗺️ Plan phases from a PRD | `/prd-to-plan` |
 | 📋 Plan a feature | `/plan` or `/spec` |
 | 🧪 Build with tests first | `/tdd` |
 | 🔬 Analyze a codebase deeply | `/synthesize` |

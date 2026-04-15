@@ -24,6 +24,16 @@ Story templates: Tool Story, Abstraction Story, Architecture Story, Itch Story, 
 
 ---
 
+## 📋 prd
+
+Full PRD lifecycle — authoring, issue breakdown, and implementation planning.
+
+**Components:** `/write-a-prd` command, `/prd-to-issues` command, `/prd-to-plan` command, `write-a-prd` skill, `prd-to-issues` skill, `prd-to-plan` skill, `prd-writer` agent, `prd-issue-breaker` agent, `prd-planner` agent
+
+Workflow: interview user (problem, users, scope, requirements) -> draft PRD -> submit as GitHub issue. Then break into vertical-slice issues (HITL/AFK with dependency graphs) or create phased implementation plan with durable architectural decisions.
+
+---
+
 ## 🐛 triagger
 
 Bug triage to GitHub issue with TDD fix plan.

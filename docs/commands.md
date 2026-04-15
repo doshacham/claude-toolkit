@@ -37,3 +37,6 @@ $ARGUMENTS captures user input after the command name.
 | `/source-check` | source-driven-development | `[framework]` | Verify against official docs |
 | `/ci-cd` | ci-cd-and-automation | `[target]` | CI/CD pipeline setup |
 | `/context` | context-engineering | `[target]` | Optimize agent context |
+| `/write-a-prd` | write-a-prd | — | Interview → PRD → GitHub issue |
+| `/prd-to-issues` | prd-to-issues | `[issue #]` | PRD → vertical-slice GitHub issues |
+| `/prd-to-plan` | prd-to-plan | `[PRD ref]` | PRD → phased plan in `./plans/` |

@@ -1,0 +1,11 @@
+{
+  "name": "prd",
+  "version": "0.1.0",
+  "description": "PRD authoring, planning, and issue breakdown workflow with specialized agents",
+  "author": {
+    "name": "Dor Shacham",
+    "email": "dorishacham52@gmail.com"
+  },
+  "license": "Proprietary",
+  "keywords": ["prd", "planning", "issues", "product-requirements"]
+}
